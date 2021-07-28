@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hi Text!</title>
+
+  <style>
+    body {
+      background: #929292;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .app {
+      margin: 1rem 1rem;
+      display: flex;
+      gap: 1rem;
+      flex-direction: row;
+    }
+
+    .text {
+      height: 300px;
+      width: 500px;
+      padding: 1rem;
+
+      border: 1px solid black;
+      border-radius: .5rem;
+      background: #d3d3d3;
+      outline: none;
+
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    button {
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+
+      border: 1px solid black;
+      border-radius: .5rem;
+      padding: .3rem .5rem;
+
+      cursor: pointer;
+
+      background: #d3d3d3;
+
+      transition: all .2s;
+    }
+
+    button:hover {
+      background: #bebebe;
+    }
+
+    button:active {
+      background: #8a8a8a;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <textarea id="text" class="text"type="text">Type or paste the text you want to convert here.</textarea>
+    <div class="buttons">
+      <button onclick="up()" >UPPERCASE</button>
+      <button onclick="low()" >lowercase</button>
+      <button onclick="regular()" >Regular</button>
+      <button onclick="clearTextBox()" >Clear Text Box</button>
+    </div>
+  </div>
+
+  <script>
+    let text = document.getElementById('text')
+
+    function up(){ //Transform text to uppercase
+      text.style.textTransform = 'uppercase';
+    }
+    function low(){ //Transform text to lowercase
+      text.style.textTransform = 'lowercase';
+    }
+    function regular(){ //Transform text to normal
+      text.style.textTransform = 'none';
+    }
+    function clearTextBox(){ //Clean text box
+      text.value = '';
+    }
+  </script>
+</body>
+</html>
