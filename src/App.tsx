@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import styles from './styles/app.module.scss';
 
 function App() {
@@ -22,7 +23,27 @@ function App() {
   }
 
   function copyText(){ //Copy text for transfer
-    navigator.clipboard.writeText(text)
+    if(text !== ''){
+      navigator.clipboard.writeText(text);
+      toast('Copied text!',
+        {
+          icon: '📝',
+          style: {
+            borderRadius: '.5rem',
+            background: '#333',
+            color: '#fff',
+          },
+        }
+      );
+    }else{
+      toast.error("There is no copying.",{
+        style: {
+          borderRadius: '.5rem',
+          background: '#333',
+          color: '#fff',
+        },
+      })
+    }
   }
 
   function toCapitalize(str: string){ //Transform text to first capital letters
@@ -43,6 +64,11 @@ function App() {
 
   return (<>
   <div className={styles.app}>
+    <Toaster 
+      position="top-right"
+      reverseOrder={false}
+    />
+    
     <div className={styles.content}>     
       <textarea 
         placeholder="Type or paste the text you want to convert here."
