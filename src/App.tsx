@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
-import { lorem } from './utilities/lorem';
+// import { lorem } from './utilities/lorem';
 
 import styles from './styles/app.module.scss';
 
@@ -9,32 +9,47 @@ function App() {
   const [text, setText] = useState('');
   const [textCopy, setTextCopy] = useState('');
 
-  // window.addEventListener('keypress',(e: KeyboardEvent) =>{
-  //   if(e.key === 'Enter'){ // Under line / execute command
-  //     let loremWord = text.slice(0,5);
+  /*
+  window.addEventListener('keypress',(e: KeyboardEvent) =>{
+    if(e.key === 'Enter'){ // Under line / execute command
+      let loremWord = text.slice(0,5);
 
-  //     console.log(loremWord === 'lorem')
+      console.log(loremWord === 'lorem')
     
-  //     if(loremWord === 'lorem'){
-  //       generateLorem()
-  //     }
-  //   }
-  // })
+      if(loremWord === 'lorem'){
+        generateLorem()
+      }
+    }
+  })
+  */
 
   //Functions texts
   function normal(){ //Transform text to normal
+    setText(textCopy)
   }
+
   function uppercase(){ //Transform text to uppercase
+    saveText()
     setText(text.toUpperCase())
   }
+
   function lowercase(){ //Transform text to lowercase
+    saveText()
     setText(text.toLowerCase())
   }
+
   function capitalize(){ //Transform text to first capital letters
+    saveText()
     setText(toCapitalize(text)) 
   }
+
   function clearTextBox(){ //Clean text box
+    saveText()
     setText('')
+  }
+
+  function saveText(){
+    textCopy === '' && setTextCopy(text);
   }
 
   function copyText(){ //Copy text for transfer
@@ -77,6 +92,7 @@ function App() {
     return arr.join(" ");
   }
 
+  /*
   function generateLorem(){ //Generate Lorem Ipsum
     let letters = text.split(' ')
     if(letters){
@@ -88,6 +104,7 @@ function App() {
       }
     }
   }
+  */
 
   return (<>
   <div className={styles.app}>
