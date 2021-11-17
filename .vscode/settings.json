@@ -1,0 +1,6 @@
+{
+  "files.autoSave": "onWindowChange",
+  "editor.fontFamily": "Fira Code,  Consolas, 'Courier New', monospace",
+  "editor.renderWhitespace": "none",
+  "editor.tabSize": 2
+}

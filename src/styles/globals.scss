@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #929292;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+button {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+
+  border: 1px solid black;
+  border-radius: .5rem;
+  padding: .3rem .5rem;
+
+  cursor: pointer;
+
+  background: #d3d3d3;
+
+  transition: all .2s;
+}
+
+button:hover {
+  background: #bebebe;
+}
+
+button:active {
+  background: #8a8a8a;
+}

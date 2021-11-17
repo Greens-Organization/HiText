@@ -1,0 +1,60 @@
+.app {
+  margin: 1rem 1rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.content {
+  position: relative;
+
+  textarea {
+    height: 300px;
+    min-height: 300px;
+    max-height: 600px;
+
+    width: 500px;
+    min-width: 500px;
+    max-width: 1000px;
+
+    padding: 1rem;
+  
+    border: 1px solid black;
+    border-radius: .5rem;
+    background: #d3d3d3;
+    outline: none;
+  
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  button {
+    padding: 5px;
+    background: none;
+    border: none;
+    border-radius: 50%;
+
+    font-size: 0;
+    
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    
+    &:hover{
+      background: rgba(0, 0, 0, .2);
+    }
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
