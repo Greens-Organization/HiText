@@ -7,12 +7,11 @@ function App() {
 
 
   function normal(){ //Transform text to normal
-    setText(toCapitalize(text)) 
   }
-  function up(){ //Transform text to uppercase
+  function uppercase(){ //Transform text to uppercase
     setText(text.toUpperCase())
   }
-  function low(){ //Transform text to lowercase
+  function lowercase(){ //Transform text to lowercase
     setText(text.toLowerCase())
   }
   function capitalize(){ //Transform text to first capital letters
@@ -82,8 +81,8 @@ function App() {
 
     <div className={styles.buttons}>
       <button onClick={normal}>Normal</button>
-      <button onClick={up}>UPPERCASE</button>
-      <button onClick={low}>lowercase</button>
+      <button onClick={uppercase}>UPPERCASE</button>
+      <button onClick={lowercase}>lowercase</button>
       <button onClick={capitalize}>Capitalize</button>
       <button onClick={clearTextBox}>Clear Text Box</button>
     </div>
