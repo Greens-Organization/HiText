@@ -1,11 +1,25 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import { LoremIpsum } from 'lorem-ipsum';
+
 import styles from './styles/app.module.scss';
 
 function App() {
   const [text, setText] = useState('');
 
+  // window.addEventListener('keypress',(e: KeyboardEvent) =>{
+  //   if(e.key === 'Enter'){ // Under line / execute command
+  //     let loremWord = text.slice(0,5);
 
+  //     console.log(loremWord === 'lorem')
+    
+  //     if(loremWord === 'lorem'){
+  //       generateLorem()
+  //     }
+  //   }
+  // })
+
+  //Functions texts
   function normal(){ //Transform text to normal
   }
   function uppercase(){ //Transform text to uppercase
@@ -59,6 +73,20 @@ function App() {
     //Join all the elements of the array back into a string 
     //using a blankspace as a separator 
     return arr.join(" ");
+  }
+
+  function generateLorem(){ //Generate Lorem Ipsum
+    const lorem = new LoremIpsum();
+
+    let letters = text.split(' ')
+    if(letters){
+      let wordsNumber = Number.parseInt(text.slice(5,letters[0].length));
+  
+      if(wordsNumber > 0 && wordsNumber <= 10000){
+        let newStr = lorem.generateWords(wordsNumber)
+        setText(newStr)
+      }
+    }
   }
 
   return (<>

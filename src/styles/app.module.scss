@@ -28,6 +28,12 @@
     font-family: Roboto, Arial, sans-serif;
     font-size: 1rem;
     font-weight: 500;
+
+    &::-webkit-scrollbar-thumb{
+      background: #3a3a3a;
+      border: none;
+      border-radius: 5px;
+    }
   }
 
   button {
