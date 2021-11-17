@@ -47,6 +47,8 @@
     position: absolute;
     top: 2%;
     right: 2%;
+
+    transition: background .5s;
     
     &:hover{
       background: rgba(0, 0, 0, .2);
@@ -63,4 +65,8 @@
   display: flex;
   flex-direction: column;
   gap: .5rem;
+
+  .dif {
+    font-size: 0;
+  }
 }
