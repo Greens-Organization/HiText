@@ -1,72 +1,47 @@
 .app {
-  margin: 1rem 1rem;
-
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  position: relative;
+  padding: 2rem;
 }
 
 .content {
+  display: flex;
   position: relative;
+  width: 100%;
+  justify-content: center;
 
   textarea {
-    height: 300px;
-    min-height: 300px;
-    max-height: 600px;
-
-    width: 500px;
-    min-width: 500px;
-    max-width: 1000px;
+    background: var(--color1);
 
     padding: 1rem;
-  
-    border: 1px solid black;
-    border-radius: .5rem;
-    background: #d3d3d3;
-    outline: none;
-  
     font-family: Roboto, Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--color4);
 
-    &::-webkit-scrollbar-thumb{
-      background: #3a3a3a;
-      border: none;
-      border-radius: 5px;
-    }
-  }
+    min-width: 50%;
+    min-height: 30rem;
 
-  button {
-    padding: 5px;
-    background: none;
+    resize: vertical;
+
+    outline: none;
     border: none;
-    border-radius: 50%;
+    border-radius: 5px;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);
 
-    font-size: 0;
-    
-    position: absolute;
-    top: 2%;
-    right: 2%;
-
-    transition: background .5s;
-    
-    &:hover{
-      background: rgba(0, 0, 0, .2);
+    &::-webkit-resizer {
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent var(--color3) var(--color3) transparent;
+      padding: 1rem;
     }
 
-    img {
-      width: 25px;
-      height: 25px;
+    &::placeholder {
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 1.2rem;
+
+      color: var(--placeholder-color);
+
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
     }
-  }
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-
-  .dif {
-    font-size: 0;
   }
 }

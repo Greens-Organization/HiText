@@ -2,10 +2,24 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 95%;
+  }
+  
+  @media only screen and (max-width: 750px) {
+    font-size: 90%;
+  }
 }
 
 @import url(./light-theme.scss);
 // @import url(./dark-theme.scss);
+
+:root {
+  --placeholder-color: #B0ADAD;
+}
+
+
 
 body {
   background: var(--color2);
