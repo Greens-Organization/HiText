@@ -36,8 +36,13 @@ export function Menu() {
           </div>
           <nav>
             <a href="/">Home</a>
-            <a href="/">About</a>
-            <a href="/">Github</a>
+            <a href="/about">About</a>
+            <a
+              href="https://github.com/Greens-Organization/HiText/tree/main"
+              target="_blank"
+            >
+              Github
+            </a>
           </nav>
         </header>
         <main></main>
