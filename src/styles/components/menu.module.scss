@@ -1,0 +1,79 @@
+.app {
+  display: grid;
+  grid-template-rows: 4.25rem 1fr;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  margin: 0 6rem;
+
+  @media only screen and (max-width: 1000px) {
+    margin: 0 3rem;
+  }
+
+  @media only screen and (max-width: 750px) {
+    margin: 0 1rem;
+  }
+
+  .logo {
+    display: flex;     
+    img {
+      height: 100%;
+    }
+  }
+
+  .chooseTheme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    button {
+       padding: .5rem;
+      cursor: pointer;
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+
+    gap: 2.5rem;
+  }
+}
+
+a {
+  padding: .625rem 2.5rem;
+
+  text-decoration: none;
+
+  color: var(--color3);
+  font-weight: 700;
+  font-size: .9rem;
+
+  background: var(--color1);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+
+  transition: all .4s;
+}
+
+a:hover {
+  color: var(--color1);
+  background: var(--color3);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  font-size: 0;
+  border: none;
+}
