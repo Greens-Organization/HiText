@@ -68,3 +68,34 @@
   }
 }
 
+.buttons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  gap: 1rem;
+
+  right: 0;
+
+  button {
+    background: var(--color1);
+    color: var(--color4);
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    border: none;
+    border-radius: 50%;
+
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+
+    cursor: pointer;
+  }
+}
+
+.onlybtns {
+  display: flex;
+  position: relative;
+}

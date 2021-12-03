@@ -85,28 +85,30 @@ export function TextArea() {
       <div className={styles.app}>
         <Toaster position="top-right" reverseOrder={false} />
 
-        <div className={styles.content}>
-          <div className={styles.onlyCopyBtn}>
-            <textarea
-              placeholder="Type something"
-              value={text}
-              onChange={(e) => setText(e.currentTarget.value)}
-            />
-            <button onClick={copyText} title="Copy text">
-              <img src="copy.svg" alt="Copy" />
+        <div className={styles.onlybtns}>
+          <div className={styles.content}>
+            <div className={styles.onlyCopyBtn}>
+              <textarea
+                placeholder="Type something"
+                value={text}
+                onChange={(e) => setText(e.currentTarget.value)}
+              />
+              <button onClick={copyText} title="Copy text">
+                <img src="copy.svg" alt="Copy" />
+              </button>
+            </div>
+          </div>
+
+          <div className={styles.buttons}>
+            <button onClick={normal}>ABc</button>
+            <button onClick={uppercase}>ABC</button>
+            <button onClick={lowercase}>abc</button>
+            <button onClick={capitalize}>Abc</button>
+            <button onClick={clearTextBox} className={styles.dif}>
+              <img src="trash.svg" alt="Cleaner" />
             </button>
           </div>
         </div>
-
-        {/* <div className={styles.buttons}>
-          <button onClick={normal}>ABc</button>
-          <button onClick={uppercase}>ABC</button>
-          <button onClick={lowercase}>abc</button>
-          <button onClick={capitalize}>Abc</button>
-          <button onClick={clearTextBox} className={styles.dif}>
-            <img src="trash.svg" alt="Cleaner" />
-          </button>
-        </div> */}
       </div>
     </>
   );
