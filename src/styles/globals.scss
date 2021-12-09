@@ -4,40 +4,13 @@
   box-sizing: border-box;
 }
 
+// @import url(./light-theme.scss);
+@import url(./dark-theme.scss);
+
 body {
-  background: #929292;
+  background: var(--color2);
   font-family: Roboto, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 500;
-}
-
-
-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-
-  border: none;
-  border-radius: 50%;
-
-  width: 40px;
-  height: 40px;
-
-  outline: none;
-  cursor: pointer;
-  background: #d3d3d3;
-
-  transition: all .2s;
-}
-
-button:hover {
-  background: #bebebe;
-}
-
-button:active {
-  background: #8a8a8a;
+  color: var(--color4)
 }
