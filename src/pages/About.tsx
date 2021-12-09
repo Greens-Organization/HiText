@@ -1,6 +1,10 @@
 import { Menu } from "../components/Menu";
+import { Clock } from "../components/Clock";
+
+//Style
 import styles from "../styles/pages/about.module.scss";
 
+//Page about
 export default function About() {
   return (
     <>
@@ -17,7 +21,9 @@ export default function About() {
             letter uppercase and among other formats.
           </p>
         </div>
-        <div></div>
+        <div>
+          <Clock />
+        </div>
       </main>
     </>
   );
