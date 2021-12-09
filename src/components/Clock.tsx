@@ -1,23 +1,19 @@
 import { useEffect, useState } from "react";
 import dateFormat from "dateformat";
 
-//Estilo
+//Style
 import styles from "../styles/components/clock.module.scss";
 
-//Componente
+//Component
 export function Clock() {
   const now = Date.now();
-  const [date, setDate] = useState();
-  const [hour, setHour] = useState();
+  const [date, setDate] = useState("");
+  const [hour, setHour] = useState("");
 
   useEffect(() => {
-    updateDateHour();
-  }, [now]);
-
-  function updateDateHour() {
     setDate(dateFormat(now, "dd/mmmm/yyyy"));
     setHour(dateFormat(now, "hh:M TT"));
-  }
+  }, [now]);
 
   return (
     <>
