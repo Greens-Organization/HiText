@@ -26,7 +26,7 @@ export function ChooseThemeProvider(props: ThemeContextProviderProps) {
   }
 
   function enableLightMode() {
-    setDarkOn(false);
+    // setDarkOn(false);
   }
 
   return (
