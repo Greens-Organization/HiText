@@ -4,7 +4,7 @@ import dateFormat from "dateformat";
 //Style
 import styles from "../styles/components/clock.module.scss";
 
-//Component
+//Component clock
 export function Clock() {
   const now = Date.now();
   const [date, setDate] = useState("");

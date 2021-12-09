@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import styles from "../styles/components/menu.module.scss";
 import { useTheme } from "../hooks/useChooseTheme";
 import { Link } from "react-router-dom";
 
-//Componente
+//Style
+import styles from "../styles/components/menu.module.scss";
+
+//Component menu
 export function Menu() {
   const { darkOn, enableDarkMode, enableLightMode } = useTheme();
 

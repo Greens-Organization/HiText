@@ -1,8 +1,10 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
+//Style
 import styles from "../styles/components/textarea.module.scss";
 
+//Component textarea
 export function TextArea() {
   const [text, setText] = useState("");
   const [textCopy, setTextCopy] = useState("");
