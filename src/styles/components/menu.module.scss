@@ -63,12 +63,13 @@ a {
   border-radius: 5px;
 
   transition: all .4s;
+
+  &:hover {
+    color: var(--color1);
+    background: var(--color3);
+  }
 }
 
-a:hover {
-  color: var(--color1);
-  background: var(--color3);
-}
 
 button {
   display: flex;

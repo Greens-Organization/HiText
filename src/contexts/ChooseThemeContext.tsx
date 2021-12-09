@@ -17,7 +17,7 @@ export const ChooseThemeContext = createContext({} as ThemeContextType);
 
 //Provider
 export function ChooseThemeProvider(props: ThemeContextProviderProps) {
-  const [darkOn, setDarkOn] = useState(false);
+  const [darkOn, setDarkOn] = useState(true);
 
   useEffect(() => {});
 

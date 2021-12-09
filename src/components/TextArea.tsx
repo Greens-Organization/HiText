@@ -100,11 +100,40 @@ export function TextArea() {
           </div>
 
           <div className={styles.buttons}>
-            <button onClick={normal}>ABc</button>
-            <button onClick={uppercase}>ABC</button>
-            <button onClick={lowercase}>abc</button>
-            <button onClick={capitalize}>Abc</button>
-            <button onClick={clearTextBox} className={styles.dif}>
+            <button
+              onClick={normal}
+              title="Return the text to its original formatting"
+              aria-label="Return the text to its original formatting"
+            >
+              ABc
+            </button>
+            <button
+              onClick={uppercase}
+              title="Turns text into capital letters"
+              aria-label="Turns text into capital letters"
+            >
+              ABC
+            </button>
+            <button
+              onClick={lowercase}
+              title="Transforms text into lowercase"
+              aria-label="Transforms text into lowercase"
+            >
+              abc
+            </button>
+            <button
+              onClick={capitalize}
+              title="Make first letters uppercase and the rest lowercase"
+              aria-label="Make first letters uppercase and the rest lowercase"
+            >
+              Abc
+            </button>
+            <button
+              onClick={clearTextBox}
+              className={styles.dif}
+              title="Clear text area"
+              aria-label="Clear text area"
+            >
               <img src="trash.svg" alt="Cleaner" />
             </button>
           </div>
