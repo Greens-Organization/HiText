@@ -14,3 +14,5 @@ Exactly this is the function of HiText, a simple text editor where you can chang
 
 ## Upcoming updates
 We are working on a new interface, simpler and more pleasing to the eye, and new text editing functions. All of this is under implementation and will be available soon.
+
+## Version 2.0
