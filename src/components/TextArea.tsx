@@ -85,18 +85,16 @@ export function TextArea() {
       <div className={styles.app}>
         <Toaster position="top-right" reverseOrder={false} />
 
-        <div className={styles.onlybtns}>
-          <div className={styles.content}>
-            <div className={styles.onlyCopyBtn}>
-              <textarea
-                placeholder="Type something"
-                value={text}
-                onChange={(e) => setText(e.currentTarget.value)}
-              />
-              <button onClick={copyText} title="Copy text">
-                <img src="copy.svg" alt="Copy" />
-              </button>
-            </div>
+        <div className={styles.content}>
+          <div className={styles.onlyCopyBtn}>
+            <textarea
+              placeholder="Type something"
+              value={text}
+              onChange={(e) => setText(e.currentTarget.value)}
+            />
+            <button onClick={copyText} title="Copy text">
+              <img src="copy.svg" alt="Copy" />
+            </button>
           </div>
 
           <div className={styles.buttons}>
