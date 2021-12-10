@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import dateFormat from "dateformat";
 
 //Style
-import styles from "../styles/clock.module.scss";
+import styles from "../styles/components/clock.module.css";
 
 //Component clock
 export function Clock() {
@@ -18,8 +18,8 @@ export function Clock() {
   return (
     <>
       <div className={styles.app}>
-        <span>{date}</span>
-        <span>{hour}</span>
+        <span className={styles.span}>{date}</span>
+        <span className={styles.span}>{hour}</span>
       </div>
     </>
   );
