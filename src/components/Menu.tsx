@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useTheme } from "../hooks/useChooseTheme";
 import { Link } from "react-router-dom";
 
@@ -54,7 +54,4 @@ export function Menu() {
       </div>
     </>
   );
-}
-function useChooseTheme(): {} {
-  throw new Error("Function not implemented.");
 }

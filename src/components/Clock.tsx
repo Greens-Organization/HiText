@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import dateFormat from "dateformat";
 
 //Style
+// import styles from '../styles/components/clock.module.scss';
 
 //Component clock
 export function Clock() {
