@@ -17,25 +17,21 @@ export function TextArea() {
 
   function uppercase() {
     //Transform text to uppercase
-    saveText();
     setText(text.toUpperCase());
   }
 
   function lowercase() {
     //Transform text to lowercase
-    saveText();
     setText(text.toLowerCase());
   }
 
   function capitalize() {
     //Transform text to first capital letters
-    saveText();
     setText(toCapitalize(text));
   }
 
   function clearTextBox() {
     //Clean text box
-    saveText();
     setText("");
   }
 
