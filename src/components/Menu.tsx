@@ -42,10 +42,7 @@ export function Menu() {
           <nav>
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
-            <a
-              href="https://github.com/Greens-Organization/HiText/tree/main"
-              target="_blank"
-            >
+            <a href="https://github.com/Greens-Organization/HiText/tree/main">
               Github
             </a>
           </nav>
