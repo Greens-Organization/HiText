@@ -1,43 +1,21 @@
-import { useState } from "react";
+import React from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { useText } from "../hooks/useTextTramsform";
 
 //Style
 import styles from "../styles/components/textarea.module.scss";
 
 //Component textarea
 export function TextArea() {
-  const [text, setText] = useState("");
-  const [textCopy, setTextCopy] = useState("");
-
-  //Functions texts
-  function normal() {
-    //Transform text to normal
-    setText(textCopy);
-  }
-
-  function uppercase() {
-    //Transform text to uppercase
-    setText(text.toUpperCase());
-  }
-
-  function lowercase() {
-    //Transform text to lowercase
-    setText(text.toLowerCase());
-  }
-
-  function capitalize() {
-    //Transform text to first capital letters
-    setText(toCapitalize(text));
-  }
-
-  function clearTextBox() {
-    //Clean text box
-    setText("");
-  }
-
-  function saveText() {
-    textCopy === "" && setTextCopy(text);
-  }
+  const {
+    text,
+    updateText,
+    normal,
+    uppercase,
+    lowercase,
+    capitalize,
+    clearTextBox
+  } = useText();
 
   function copyText() {
     //Copy text for transfer
@@ -62,22 +40,6 @@ export function TextArea() {
     }
   }
 
-  function toCapitalize(str: string) {
-    //Transform text to first capital letters
-    //split the above string into an array of strings
-    //whenever a blank space is encountered
-    const arr = str.split(" ");
-
-    //loop through each element of the array and capitalize the first letter.
-    for (var i = 0; i < arr.length; i++) {
-      arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-    }
-
-    //Join all the elements of the array back into a string
-    //using a blankspace as a separator
-    return arr.join(" ");
-  }
-
   return (
     <>
       <div className={styles.app}>
@@ -88,7 +50,7 @@ export function TextArea() {
             <textarea
               placeholder="Type something"
               value={text}
-              onChange={(e) => setText(e.currentTarget.value)}
+              onChange={(e) => updateText(e.currentTarget.value)}
             />
             <button onClick={copyText} title="Copy text">
               <img src="copy.svg" alt="Copy" />
