@@ -1,12 +1,9 @@
-import React from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { useText } from "../hooks/useTextTramsform";
+import { UseText } from "../hooks/useTextTramsform";
 
-//Style
 import styles from "../styles/components/textarea.module.scss";
 
-//Component textarea
-export function TextArea() {
+export const TextArea = () => {
   const {
     text,
     updateText,
@@ -15,10 +12,9 @@ export function TextArea() {
     lowercase,
     capitalize,
     clearTextBox
-  } = useText();
+  } = UseText();
 
-  function copyText() {
-    //Copy text for transfer
+  function CopyTextTransfer() {
     if (text !== "") {
       navigator.clipboard.writeText(text);
       toast("Copied text!", {
@@ -52,8 +48,8 @@ export function TextArea() {
               value={text}
               onChange={(e) => updateText(e.currentTarget.value)}
             />
-            <button onClick={copyText} title="Copy text">
-              <img src="copy.svg" alt="Copy" />
+            <button onClick={CopyTextTransfer} title="Copy text">
+              <img src="/images/copy.svg" alt="Copy" />
             </button>
           </div>
 
@@ -92,11 +88,11 @@ export function TextArea() {
               title="Clear text area"
               aria-label="Clear text area"
             >
-              <img src="trash.svg" alt="Cleaner" />
+              <img src="/images/trash.svg" alt="Cleaner" />
             </button>
           </div>
         </div>
       </div>
     </>
   );
-}
+};

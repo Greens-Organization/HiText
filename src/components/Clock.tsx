@@ -1,38 +1,14 @@
-import { useEffect, useState } from "react";
-import dateFormat from "dateformat";
+import { parseISO, format } from "date-fns";
 
-//Style
-// import styles from '../styles/components/clock.module.scss';
+export const Clock = () => {
+  const now = Date.now().toString();
 
-//Component clock
-export function Clock() {
-  const now = Date.now();
-  const [date, setDate] = useState("");
-  const [hour, setHour] = useState("");
-
-  useEffect(() => {
-    setDate(dateFormat(now, "dd/mmmm/yyyy"));
-    setHour(dateFormat(now, "hh:M TT"));
-  }, [now]);
+  const date = parseISO(now);
 
   return (
-    <>
-      <div className={"display: flex; flex-direction: column;"}>
-        <span
-          className={
-            "color: var(--placeholder-color); font-weight: bold; font-size: .75rem;"
-          }
-        >
-          {date}
-        </span>
-        <span
-          className={
-            "color: var(--placeholder-color); font-weight: bold; font-size: .75rem;"
-          }
-        >
-          {hour}
-        </span>
-      </div>
-    </>
+    <div>
+      <time dateTime={now}>{format(date, "dd/mmmm/yyyy")}</time>
+      <time dateTime={now}>{format(date, "hh:mm a..aa")}</time>
+    </div>
   );
-}
+};
