@@ -1,7 +1,5 @@
-//Importações
 import { createContext, ReactNode, useState } from "react";
 
-//Tipos
 type TextTransformContextType = {
   text: string;
   updateText: (value: string) => void;
@@ -16,13 +14,11 @@ type TextProviderProps = {
   children: ReactNode;
 };
 
-//Contexto
 export const TextTransformContext = createContext(
   {} as TextTransformContextType
 );
 
-//Provider
-export function TextTransformProvider(props: TextProviderProps) {
+export function TextTransformProvider({ children }: TextProviderProps) {
   const [text, setText] = useState("");
   const [textCopy, setTextCopy] = useState("");
 
@@ -94,7 +90,7 @@ export function TextTransformProvider(props: TextProviderProps) {
         clearTextBox
       }}
     >
-      {props.children}
+      {children}
     </TextTransformContext.Provider>
   );
 }

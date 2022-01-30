@@ -1,7 +1,5 @@
-//Importações
 import { createContext, ReactNode, useEffect, useState } from "react";
 
-//Tipos
 type ThemeContextType = {
   darkOn: boolean;
   enableDarkMode: () => void;
@@ -12,11 +10,9 @@ type ThemeContextProviderProps = {
   children: ReactNode;
 };
 
-//Contexto
 export const ChooseThemeContext = createContext({} as ThemeContextType);
 
-//Provider
-export function ChooseThemeProvider(props: ThemeContextProviderProps) {
+export function ChooseThemeProvider({ children }: ThemeContextProviderProps) {
   const [darkOn, setDarkOn] = useState(true);
 
   useEffect(() => {});
@@ -37,7 +33,7 @@ export function ChooseThemeProvider(props: ThemeContextProviderProps) {
         enableLightMode
       }}
     >
-      {props.children}
+      {children}
     </ChooseThemeContext.Provider>
   );
 }
