@@ -14,33 +14,32 @@ export const TextArea = () => {
     clearTextBox
   } = UseText();
 
-  function CopyTextTransfer() {
-    if (text !== "") {
-      navigator.clipboard.writeText(text);
-      toast("Copied text!", {
-        icon: "📝",
-        style: {
-          borderRadius: ".5rem",
-          background: "#333",
-          color: "#fff"
-        }
-      });
-    } else {
-      toast.error("There is no copying.", {
-        style: {
-          borderRadius: ".5rem",
-          background: "#333",
-          color: "#fff"
-        }
-      });
-    }
-  }
+  // function CopyTextTransfer() {
+  // if (text !== "") {
+  // navigator.clipboard.writeText(text);
+  // toast("Copied text!", {
+  // icon: "📝",
+  // style: {
+  // borderRadius: ".5rem",
+  // background: "#333",
+  // color: "#fff"
+  // }
+  // });
+  // } else {
+  // toast.error("There is no copying.", {
+  // style: {
+  // borderRadius: ".5rem",
+  // background: "#333",
+  // color: "#fff"
+  // }
+  // });
+  // }
+  // }
+  // <Toaster position="top-right" reverseOrder={false} />;
 
   return (
     <>
       <div className={styles.app}>
-        <Toaster position="top-right" reverseOrder={false} />
-
         <div className={styles.content}>
           <div className={styles.onlyCopyBtn}>
             <textarea
@@ -48,7 +47,7 @@ export const TextArea = () => {
               value={text}
               onChange={(e) => updateText(e.currentTarget.value)}
             />
-            <button onClick={CopyTextTransfer} title="Copy text">
+            <button title="Copy text">
               <img src="/images/copy.svg" alt="Copy" />
             </button>
           </div>
