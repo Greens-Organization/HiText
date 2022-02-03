@@ -5,4 +5,3 @@ export const Lorem = (wordsNumber: number) => {
 
   return lorem.generateWords(wordsNumber);
 };
-
