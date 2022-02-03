@@ -14,14 +14,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "paths": {
-      "@/components/*": ["./src/components/*"],
-      "@/contexts/*": ["./src/contexts/*"],
-      "@/hooks/*": ["./src/hooks/*"],
-      "@/pages/*": ["./src/pages/*"],
-      "@/util/*": ["./src/util/*"]
-    }
+    "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": ["src", "declartions.d.ts"]
 }
