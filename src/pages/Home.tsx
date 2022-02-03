@@ -10,7 +10,6 @@ export default function Home() {
       <Menu />
       <div className={styles.content}>
         <TextArea />
-        <Clock />
       </div>
     </>
   );
