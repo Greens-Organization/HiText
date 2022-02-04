@@ -6,15 +6,23 @@
 }
 
 :root {
-  --dark-background: #161924;
+  --background-color: #F5F5F5;
+  --textarea-color: #FCF9F9;
+  --foreground-color: #161924;
+  --blue-color: #68AFF1;
+  --placeholder-color: #B0ADAD;
+}
+
+[data-theme="dark"] {
+  --background-color: #161924;
   --textarea-color: #2A3146;
   --foreground-color:#F5F5F5;
-  --dark-blue-color: #2187E4;
+  --blue-color: #2187E4;
   --placeholder-color: #D2D1D5;
 }
 
 body {
-  background: var(--dark-background);
+  background: var(--background-color);
   font-family: Roboto, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 500;
