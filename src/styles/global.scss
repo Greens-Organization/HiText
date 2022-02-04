@@ -13,7 +13,7 @@
   --placeholder-color: #B0ADAD;
 }
 
-[data-theme="dark"] {
+[data-theme="dark"]:root {
   --background-color: #161924;
   --textarea-color: #2A3146;
   --foreground-color:#F5F5F5;
