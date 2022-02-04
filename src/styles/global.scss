@@ -5,28 +5,18 @@
   list-style: none;
 }
 
-// @import url(./light-theme.scss);
-// @import url(./dark-theme.scss);
 :root {
-  --color1: #2A3146;
-  --color2: #161924;
-  --color3: #2187E4;
-  --color4: #F5F5F5;
+  --dark-background: #161924;
+  --textarea-color: #2A3146;
+  --foreground-color:#F5F5F5;
+  --dark-blue-color: #2187E4;
   --placeholder-color: #D2D1D5;
 }
 
 body {
-  background: var(--color2);
+  background: var(--dark-background);
   font-family: Roboto, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--color4)
-}
-
-body {
-  background: var(--color2);
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color4)
+  color: var(--foreground-color);
 }
