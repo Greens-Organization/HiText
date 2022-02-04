@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import useLocalStorage from "use-local-storage";
 import { IChildrenProps, IThemeContextProps } from "../@types";
 
@@ -10,16 +10,24 @@ export const ChooseThemeProvider = ({ children }: IChildrenProps) => {
     "theme",
     defaultDark ? "dark" : "light"
   );
+  const [darkOn, setDarkOn] = useState(true);
 
-  const switchTheme = () => {
+  const switchTheme = async () => {
     const newTheme = theme === "light" ? "dark" : "light";
+    document.getElementsByTagName("html")[0].dataset.theme = newTheme;
     setTheme(newTheme);
+    setDarkOn((current) => !current);
   };
+
+  useEffect(() => {
+    console.log(darkOn);
+  }, [darkOn]);
 
   return (
     <ChooseThemeContext.Provider
       value={{
         theme,
+        darkOn,
         switchTheme
       }}
     >
