@@ -7,12 +7,12 @@ interface Props {
 }
 
 export const Menu = ({ home }: Props) => {
-  const { theme, switchTheme } = useTheme();
+  const { switchTheme, darkOn } = useTheme();
   return (
     <div className={styles.app}>
       <header className={styles.content}>
         <div className={styles.logo}>
-          {theme ? (
+          {darkOn ? (
             <img
               src="/images/light-logo.svg"
               alt="HiText Logo for Light Mode"
@@ -22,7 +22,7 @@ export const Menu = ({ home }: Props) => {
           )}
         </div>
         <div className={styles.chooseTheme}>
-          {theme ? (
+          {darkOn ? (
             <button onClick={switchTheme}>
               <img src="/images/moon.svg" alt="" />
             </button>
