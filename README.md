@@ -37,7 +37,7 @@ Made with ❤️ by:
       </a>
     </td>
     <td align="center">
-      <a hrf="https://github.com/TheMath123">
+      <a href="https://github.com/TheMath123">
         <img src="https://github.com/themath123.png" width="100px;" alt="Matheus Profile Photo of the GitHub"/><br>
         <sub>
           <b>Matheus P Agostinho</b>
