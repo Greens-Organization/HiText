@@ -1,24 +1,11 @@
-import { createContext, ReactNode, useState } from "react";
-
-type TextTransformContextType = {
-  text: string;
-  updateText: (value: string) => void;
-  normal: () => void;
-  uppercase: () => void;
-  lowercase: () => void;
-  capitalize: () => void;
-  clearTextBox: () => void;
-};
-
-type TextProviderProps = {
-  children: ReactNode;
-};
+import { createContext, useState } from "react";
+import { IChildrenProps, ITextTransformContextProps } from "../@types";
 
 export const TextTransformContext = createContext(
-  {} as TextTransformContextType
+  {} as ITextTransformContextProps
 );
 
-export function TextTransformProvider({ children }: TextProviderProps) {
+export function TextTransformProvider({ children }: IChildrenProps) {
   const [text, setText] = useState("");
   const [textCopy, setTextCopy] = useState("");
 
