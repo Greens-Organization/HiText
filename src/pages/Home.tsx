@@ -7,9 +7,10 @@ import styles from "../styles/pages/home.module.scss";
 export default function Home() {
   return (
     <>
-      <Menu />
+      <Menu home />
       <div className={styles.content}>
         <TextArea />
+        <Clock />
       </div>
     </>
   );
