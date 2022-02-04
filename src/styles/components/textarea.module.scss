@@ -28,7 +28,7 @@
     &::-webkit-resizer {
       border-width: 1px;
       border-style: solid;
-      border-color: transparent var(--dark-blue-color) var(--dark-blue-color) transparent;
+      border-color: transparent var(--blue-color) var(--blue-color) transparent;
       border-end-end-radius: 5px;
     }
 
@@ -96,7 +96,7 @@
       cursor: pointer;
 
       &:hover {
-        background: var(--dark-blue-color);
+        background: var(--blue-color);
         color: var(--foreground-color);
       }
     }

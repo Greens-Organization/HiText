@@ -49,7 +49,7 @@
 
 
     .active > * {
-      background: var(--dark-blue-color);
+      background: var(--blue-color);
       color: var(--foreground-color);
     }
   }
@@ -60,7 +60,7 @@ a {
 
   text-decoration: none;
 
-  color: var(--dark-blue-color);
+  color: var(--blue-color);
   font-weight: 700;
   font-size: .9rem;
 
@@ -71,7 +71,7 @@ a {
   transition: all .4s;
 
   &:hover {
-    background: var(--dark-blue-color);
+    background: var(--blue-color);
     color: var(--foreground-color);
   }
 }
