@@ -28,9 +28,7 @@ export function TextTransformProvider({ children }: TextProviderProps) {
     }
   }
 
-  //Functions texts
   function normal() {
-    //Transform text to normal
     saveOriginalText();
     setText(textCopy);
   }
@@ -40,19 +38,16 @@ export function TextTransformProvider({ children }: TextProviderProps) {
   }
 
   function uppercase() {
-    //Transform text to uppercase
     saveOriginalText();
     setText(text.toUpperCase());
   }
 
   function lowercase() {
-    //Transform text to lowercase
     saveOriginalText();
     setText(text.toLowerCase());
   }
 
   function clearTextBox() {
-    //Clean text box
     setText("");
   }
 
