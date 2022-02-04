@@ -3,7 +3,8 @@ export interface IChildrenProps {
 }
 
 export interface IThemeContextProps {
-  theme?: string;
+  theme: string;
+  darkOn: boolean;
   switchTheme: () => void;
 }
 
