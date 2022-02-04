@@ -31,8 +31,7 @@ export const Clock = () => {
       <time>
         {currentTime.toLocaleString("pt-br", {
           hour: "numeric",
-          minute: "numeric",
-          hour12: true
+          minute: "numeric"
         })}
       </time>
     </div>
