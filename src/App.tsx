@@ -1,4 +1,4 @@
-import { ChooseThemeProvider } from "./contexts/ChooseThemeContext";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { TextTransformProvider } from "./contexts/TextTransformContext";
 
 import Home from "./pages/Home";
@@ -7,9 +7,12 @@ import About from "./pages/About";
 export default function App() {
   return (
     <TextTransformProvider>
-      <ChooseThemeProvider>
-        <Home />
-      </ChooseThemeProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
     </TextTransformProvider>
   );
 }
