@@ -3,13 +3,11 @@
   "version": "0.2.1",
   "license": "MIT",
   "dependencies": {
-    "date-fns": "^2.28.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hot-toast": "^2.2.0",
     "react-router": "^6.2.1",
-    "react-router-dom": "^6.2.1",
-    "sass": "^1.49.0"
+    "react-router-dom": "^6.2.1"
   },
   "scripts": {
     "dev": "vite",
@@ -23,6 +21,7 @@
     "@types/react-router": "^5.1.18",
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^1.1.4",
+    "sass": "^1.49.7",
     "typescript": "^4.5.5",
     "vite": "^2.7.13"
   }
