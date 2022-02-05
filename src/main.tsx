@@ -1,14 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { ChooseThemeProvider } from "./contexts/ChooseThemeContext";
 
-//Estilo
-import "./styles/globals.scss";
+import "./styles/global.scss";
 
-//Componente
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ChooseThemeProvider>
+      <App />
+    </ChooseThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

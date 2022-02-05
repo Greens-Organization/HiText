@@ -1,38 +1,39 @@
 import { useEffect, useState } from "react";
-import dateFormat from "dateformat";
+import styles from "../styles/components/clock.module.scss";
 
-//Style
-// import styles from '../styles/components/clock.module.scss';
-
-//Component clock
-export function Clock() {
-  const now = Date.now();
-  const [date, setDate] = useState("");
-  const [hour, setHour] = useState("");
+export const Clock = () => {
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
-    setDate(dateFormat(now, "dd/mmmm/yyyy"));
-    setHour(dateFormat(now, "hh:M TT"));
-  }, [now]);
+    let secDate = setInterval(() => {
+      setCurrentDate(new Date());
+    }, 1000);
+    return () => clearInterval(secDate);
+  }, []);
+
+  useEffect(() => {
+    let secTime = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(secTime);
+  });
 
   return (
-    <>
-      <div className={"display: flex; flex-direction: column;"}>
-        <span
-          className={
-            "color: var(--placeholder-color); font-weight: bold; font-size: .75rem;"
-          }
-        >
-          {date}
-        </span>
-        <span
-          className={
-            "color: var(--placeholder-color); font-weight: bold; font-size: .75rem;"
-          }
-        >
-          {hour}
-        </span>
-      </div>
-    </>
+    <div className={styles.container}>
+      <time>
+        {currentDate.toLocaleString("pt-br", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit"
+        })}
+      </time>
+      <time>
+        {currentTime.toLocaleString("pt-br", {
+          hour: "numeric",
+          minute: "numeric"
+        })}
+      </time>
+    </div>
   );
-}
+};

@@ -1,28 +1,11 @@
-//Importações
-import { createContext, ReactNode, useState } from "react";
+import { createContext, useState } from "react";
+import { IChildrenProps, ITextTransformContextProps } from "../@types";
 
-//Tipos
-type TextTransformContextType = {
-  text: string;
-  updateText: (value: string) => void;
-  normal: () => void;
-  uppercase: () => void;
-  lowercase: () => void;
-  capitalize: () => void;
-  clearTextBox: () => void;
-};
-
-type TextProviderProps = {
-  children: ReactNode;
-};
-
-//Contexto
 export const TextTransformContext = createContext(
-  {} as TextTransformContextType
+  {} as ITextTransformContextProps
 );
 
-//Provider
-export function TextTransformProvider(props: TextProviderProps) {
+export function TextTransformProvider({ children }: IChildrenProps) {
   const [text, setText] = useState("");
   const [textCopy, setTextCopy] = useState("");
 
@@ -32,9 +15,7 @@ export function TextTransformProvider(props: TextProviderProps) {
     }
   }
 
-  //Functions texts
   function normal() {
-    //Transform text to normal
     saveOriginalText();
     setText(textCopy);
   }
@@ -44,19 +25,16 @@ export function TextTransformProvider(props: TextProviderProps) {
   }
 
   function uppercase() {
-    //Transform text to uppercase
     saveOriginalText();
     setText(text.toUpperCase());
   }
 
   function lowercase() {
-    //Transform text to lowercase
     saveOriginalText();
     setText(text.toLowerCase());
   }
 
   function clearTextBox() {
-    //Clean text box
     setText("");
   }
 
@@ -94,7 +72,7 @@ export function TextTransformProvider(props: TextProviderProps) {
         clearTextBox
       }}
     >
-      {props.children}
+      {children}
     </TextTransformContext.Provider>
   );
 }

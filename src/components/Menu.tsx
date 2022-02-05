@@ -1,54 +1,70 @@
-import React from "react";
-import { useTheme } from "../hooks/useChooseTheme";
 import { Link } from "react-router-dom";
-
-//Style
+import { useTheme } from "../hooks/useChooseTheme";
 import styles from "../styles/components/menu.module.scss";
 
-//Component menu
-export function Menu() {
-  const { darkOn, enableDarkMode, enableLightMode } = useTheme();
-
-  return (
-    <>
-      <div className={styles.app}>
-        <header className={styles.content}>
-          <div className={styles.logo}>
-            {darkOn ? (
-              <img src="dark-logo.svg" alt="HiText!" />
-            ) : (
-              <img src="light-logo.svg" alt="HiText!" />
-            )}
-          </div>
-          <div className={styles.chooseTheme}>
-            {darkOn ? (
-              <button onClick={enableLightMode}>
-                <img
-                  src="sun.svg"
-                  alt="Enable light mode"
-                  title="Enable light mode"
-                />
-              </button>
-            ) : (
-              <button onClick={enableDarkMode}>
-                <img
-                  src="moon.svg"
-                  alt="Enable dark mode"
-                  title="Enable dark mode"
-                />
-              </button>
-            )}
-          </div>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <a href="https://github.com/Greens-Organization/HiText/tree/main">
-              Github
-            </a>
-          </nav>
-        </header>
-        <main></main>
-      </div>
-    </>
-  );
+interface Props {
+  home?: boolean;
 }
+
+export const Menu = ({ home }: Props) => {
+  const { switchTheme, darkOn } = useTheme();
+  return (
+    <div className={styles.app}>
+      <header className={styles.content}>
+        <div className={styles.logo}>
+          {darkOn ? (
+            <img
+              src="/images/light-logo.svg"
+              alt="HiText Logo for Light Mode"
+            />
+          ) : (
+            <img src="/images/dark-logo.svg" alt="HiText Logo for Dark Mode" />
+          )}
+        </div>
+        <div className={styles.chooseTheme}>
+          {darkOn ? (
+            <button onClick={switchTheme}>
+              <img src="/images/moon.svg" alt="" />
+            </button>
+          ) : (
+            <button onClick={switchTheme}>
+              <img src="/images/sun.svg" alt="" />
+            </button>
+          )}
+        </div>
+        <nav>
+          <ul>
+            {home ? (
+              <>
+                <li className={styles.active}>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li className={styles.active}>
+                  <Link to="/about">About</Link>
+                </li>
+              </>
+            )}
+            <li>
+              <a
+                href="https://github.com/Greens-Organization/HiText"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+  );
+};

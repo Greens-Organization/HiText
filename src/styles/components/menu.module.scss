@@ -22,7 +22,7 @@
   }
 
   .logo {
-    display: flex;     
+    display: flex;
     img {
       height: 100%;
     }
@@ -32,7 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     button {
       border: none;
       border-radius: 50%;
@@ -41,11 +41,17 @@
     }
   }
 
-  nav {
+  nav ul {
     display: flex;
     flex-direction: row;
 
     gap: 2.5rem;
+
+
+    .active > * {
+      background: var(--blue-color);
+      color: var(--foreground-color);
+    }
   }
 }
 
@@ -54,19 +60,19 @@ a {
 
   text-decoration: none;
 
-  color: var(--color3);
+  color: var(--blue-color);
   font-weight: 700;
   font-size: .9rem;
 
-  background: var(--color1);
+  background: var(--textarea-color);
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 
   transition: all .4s;
 
   &:hover {
-    color: var(--color1);
-    background: var(--color3);
+    background: var(--blue-color);
+    color: var(--foreground-color);
   }
 }
 

@@ -1,10 +1,8 @@
 import { Menu } from "../components/Menu";
 import { Clock } from "../components/Clock";
 
-//Style
 import styles from "../styles/pages/about.module.scss";
 
-//Page about
 export default function About() {
   return (
     <>

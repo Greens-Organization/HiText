@@ -1,11 +1,8 @@
-//React
 import { useContext } from "react";
 
-//Contexto
 import { TextTransformContext } from "../contexts/TextTransformContext";
 
-//Hook
-export const useText = () => {
+export const UseText = () => {
   return useContext(TextTransformContext);
 };
 

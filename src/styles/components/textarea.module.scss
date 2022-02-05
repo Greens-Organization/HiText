@@ -9,14 +9,13 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  // width: 100vw;
 
   textarea {
-    background: var(--color1);
+    background: var(--textarea-color);
     font-family: Roboto, Arial, sans-serif;
     font-size: 1.2rem;
-    color: var(--color4);
-    
+    color: var(--foreground-color);
+
     padding: 1rem;
     min-width: 50rem;
     min-height: 60vh;
@@ -29,7 +28,7 @@
     &::-webkit-resizer {
       border-width: 1px;
       border-style: solid;
-      border-color: transparent var(--color3) var(--color3) transparent;
+      border-color: transparent var(--blue-color) var(--blue-color) transparent;
       border-end-end-radius: 5px;
     }
 
@@ -46,7 +45,7 @@
     position: absolute;
 
     border:none;
-    border-radius: 50%;    
+    border-radius: 50%;
     font-size: 0;
 
     margin: .5rem;
@@ -60,8 +59,8 @@
       width: 1.5rem;
       height: 1.5rem;
     }
-  } 
-  
+  }
+
   .onlyCopyBtn {
     display: flex;
     position: relative;
@@ -72,33 +71,33 @@
     flex-direction: column;
     position: absolute;
     gap: 1rem;
-  
+
     margin-right: 1rem;
     top: 0;
     right: -6rem;
-    
+
     button {
       position: relative;
-      background: var(--color1);
-      color: var(--color4);
-  
+      background: var(--textarea-color);
+      color: var(--foreground-color);
+
       width: 40px;
       height: 40px;
-  
+
       font-size: .8rem;
       font-weight: 700;
-  
+
       border: none;
       border-radius: 50%;
       box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
-  
+
       transition: all .4s;
-  
+
       cursor: pointer;
-  
+
       &:hover {
-        color: var(--color1);
-        background: var(--color3);
+        background: var(--blue-color);
+        color: var(--foreground-color);
       }
     }
 
