@@ -10,17 +10,16 @@ export const ChooseThemeProvider = ({ children }: IChildrenProps) => {
     "theme",
     defaultDark ? "dark" : "light"
   );
-  const [darkOn, setDarkOn] = useState(true);
+  const [darkOn, setDarkOn] = useState(theme === "dark");
 
-  const switchTheme = async () => {
+  const switchTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
-    document.getElementsByTagName("html")[0].dataset.theme = newTheme;
     setTheme(newTheme);
     setDarkOn((current) => !current);
   };
 
   useEffect(() => {
-    console.log(darkOn);
+    document.getElementsByTagName("html")[0].dataset.theme = theme;
   }, [darkOn]);
 
   return (
