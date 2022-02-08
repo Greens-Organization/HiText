@@ -3,7 +3,7 @@ import { UseText } from "../hooks/useTextTramsform";
 
 import styles from "../styles/components/textarea.module.scss";
 
-export const TextArea = () => {
+const TextArea = () => {
   const {
     text,
     updateText,
@@ -14,32 +14,30 @@ export const TextArea = () => {
     clearTextBox
   } = UseText();
 
-  // function CopyTextTransfer() {
-  // if (text !== "") {
-  // navigator.clipboard.writeText(text);
-  // toast("Copied text!", {
-  // icon: "📝",
-  // style: {
-  // borderRadius: ".5rem",
-  // background: "#333",
-  // color: "#fff"
-  // }
-  // });
-  // } else {
-  // toast.error("There is no copying.", {
-  // style: {
-  // borderRadius: ".5rem",
-  // background: "#333",
-  // color: "#fff"
-  // }
-  // });
-  // }
-  // }
-  // <Toaster position="top-right" reverseOrder={false} />;
+  const style = {
+    borderRadius: ".5rem",
+    background: "#333",
+    color: "#fff"
+  };
+
+  function CopyTextTransfer() {
+    if (text !== "") {
+      navigator.clipboard.writeText(text);
+      toast("Copied text!", {
+        icon: "📝",
+        style: style
+      });
+    } else {
+      toast.error("There is no copying.", {
+        style: style
+      });
+    }
+  }
 
   return (
     <>
       <div className={styles.app}>
+        <Toaster position="top-right" reverseOrder={false} />
         <div className={styles.content}>
           <div className={styles.onlyCopyBtn}>
             <textarea
@@ -47,7 +45,7 @@ export const TextArea = () => {
               value={text}
               onChange={(e) => updateText(e.currentTarget.value)}
             />
-            <button title="Copy text">
+            <button onClick={CopyTextTransfer} title="Copy text">
               <img src="/images/copy.svg" alt="Copy" />
             </button>
           </div>
@@ -95,3 +93,5 @@ export const TextArea = () => {
     </>
   );
 };
+
+export default TextArea;
