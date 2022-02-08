@@ -1,7 +1,11 @@
-import { Menu } from "../components/Menu";
-import { Clock } from "../components/Clock";
+import { lazy, Suspense } from "react";
+import Menu from "../components/Menu";
+
+const Clock = lazy(() => import("../components/Clock"));
 
 import styles from "../styles/pages/about.module.scss";
+
+const renderLoader = () => <div className={styles.loader}></div>;
 
 export default function About() {
   return (
@@ -19,9 +23,9 @@ export default function About() {
             letter uppercase and among other formats.
           </p>
         </div>
-        <div>
+        <Suspense fallback={renderLoader()}>
           <Clock />
-        </div>
+        </Suspense>
       </main>
     </>
   );

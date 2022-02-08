@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/components/clock.module.scss";
 
-export const Clock = () => {
+const Clock = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -37,3 +37,5 @@ export const Clock = () => {
     </div>
   );
 };
+
+export default Clock;

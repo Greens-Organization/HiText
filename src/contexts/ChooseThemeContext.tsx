@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext } from "react";
 import useLocalStorage from "use-local-storage";
 import { IChildrenProps, IThemeContextProps } from "../@types";
 
@@ -6,22 +6,19 @@ export const ChooseThemeContext = createContext({} as IThemeContextProps);
 
 export const ChooseThemeProvider = ({ children }: IChildrenProps) => {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [theme, setTheme] = useLocalStorage(
+  const [theme, setTheme] = useLocalStorage<"dark" | "light">(
     "theme",
     defaultDark ? "dark" : "light"
   );
-  const [darkOn, setDarkOn] = useState(true);
 
-  const switchTheme = async () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    document.getElementsByTagName("html")[0].dataset.theme = newTheme;
-    setTheme(newTheme);
-    setDarkOn((current) => !current);
+  const switchTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
-  useEffect(() => {
-    console.log(darkOn);
-  }, [darkOn]);
+  const darkOn = (() => {
+    document.getElementsByTagName("html")[0].dataset.theme = theme;
+    return theme === "dark";
+  })();
 
   return (
     <ChooseThemeContext.Provider

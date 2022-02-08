@@ -6,31 +6,29 @@ interface Props {
   home?: boolean;
 }
 
-export const Menu = ({ home }: Props) => {
+const Menu = ({ home }: Props) => {
   const { switchTheme, darkOn } = useTheme();
   return (
     <div className={styles.app}>
       <header className={styles.content}>
         <div className={styles.logo}>
           {darkOn ? (
+            <img src="/images/dark-logo.svg" alt="HiText Logo for Dark Mode" />
+          ) : (
             <img
               src="/images/light-logo.svg"
               alt="HiText Logo for Light Mode"
             />
-          ) : (
-            <img src="/images/dark-logo.svg" alt="HiText Logo for Dark Mode" />
           )}
         </div>
         <div className={styles.chooseTheme}>
-          {darkOn ? (
-            <button onClick={switchTheme}>
-              <img src="/images/moon.svg" alt="" />
-            </button>
-          ) : (
-            <button onClick={switchTheme}>
-              <img src="/images/sun.svg" alt="" />
-            </button>
-          )}
+          <button onClick={switchTheme}>
+            {darkOn ? (
+              <img src="/images/sun.svg" alt="Enable light mode" />
+            ) : (
+              <img src="/images/moon.svg" alt="Enable dark mode" />
+            )}
+          </button>
         </div>
         <nav>
           <ul>
@@ -68,3 +66,5 @@ export const Menu = ({ home }: Props) => {
     </div>
   );
 };
+
+export default Menu;
