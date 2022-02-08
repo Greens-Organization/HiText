@@ -6,14 +6,14 @@
 }
 
 :root {
-  --background-color: #F5F5F5;
+  --background-color: #F2F2F3;
   --textarea-color: #FCF9F9;
   --foreground-color: #161924;
   --blue-color: #68AFF1;
   --placeholder-color: #B0ADAD;
 }
 
-[data-theme="dark"]:root {
+[data-theme="dark"] {
   --background-color: #161924;
   --textarea-color: #2A3146;
   --foreground-color:#F5F5F5;
