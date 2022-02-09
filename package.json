@@ -1,6 +1,6 @@
 {
   "name": "hitext",
-  "version": "0.2.1",
+  "version": "2.2.1",
   "license": "MIT",
   "dependencies": {
     "lorem-ipsum": "^2.0.4",

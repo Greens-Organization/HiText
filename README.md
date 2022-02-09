@@ -7,11 +7,14 @@ Exactly this is the function of HiText, a simple text editor where you can chang
 - [React-Route-DOM](https://reactrouter.com)
 - [Vite](https://vitejs.dev)
 - [SASS](https://sass-lang.com)
+
 ## 🔖 Features
 - Change text to lowercase.
 - Change text to uppercase.
 - Change text to have capital first letter and normal rest.
 - Copy text quickly.
+- Component loading optimization techniques
+
 ## 🚩 Upcoming updates
 We are working on a new interface, simpler and more pleasing to the eye, and new text editing functions. All of this is under implementation and will be available soon.
 
