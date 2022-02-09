@@ -1,9 +1,12 @@
 import toast, { Toaster } from "react-hot-toast";
+import { useTheme } from "../hooks/useChooseTheme";
 import { UseText } from "../hooks/useTextTramsform";
 
 import styles from "../styles/components/textarea.module.scss";
 
 const TextArea = () => {
+  const { darkOn } = useTheme();
+  
   const {
     text,
     updateText,
@@ -56,7 +59,11 @@ const TextArea = () => {
               title="Return the text to its original formatting"
               aria-label="Return the text to its original formatting"
             >
-              ABc
+              { darkOn ? (
+                <img src="images/undoWhite.svg" alt="Undo" />
+                ) : (
+                <img src="images/undoBlack.svg" alt="Undo" />
+              )}
             </button>
             <button
               onClick={uppercase}

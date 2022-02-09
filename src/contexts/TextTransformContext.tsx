@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { IChildrenProps, ITextTransformContextProps } from "../@types";
 
 export const TextTransformContext = createContext(
@@ -8,6 +8,11 @@ export const TextTransformContext = createContext(
 export function TextTransformProvider({ children }: IChildrenProps) {
   const [text, setText] = useState("");
   const [textCopy, setTextCopy] = useState("");
+
+  useEffect(() => {
+    saveOriginalText()
+  }, [text])
+  
 
   function saveOriginalText() {
     if (textCopy === "") {
