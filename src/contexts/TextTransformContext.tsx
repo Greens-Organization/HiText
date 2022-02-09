@@ -11,6 +11,8 @@ export function TextTransformProvider({ children }: IChildrenProps) {
 
   useEffect(() => {
     saveOriginalText()
+  
+    console.log(text)
   }, [text])
   
 
@@ -62,7 +64,8 @@ export function TextTransformProvider({ children }: IChildrenProps) {
   function capitalize() {
     //Transform text to first capital letters
     saveOriginalText();
-    setText(toCapitalize(text));
+    let textTransform = toCapitalize(text)
+    setText(textTransform);
   }
 
   return (
