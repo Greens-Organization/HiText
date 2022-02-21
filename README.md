@@ -23,7 +23,8 @@ We are working on a new interface, simpler and more pleasing to the eye, and new
 - [x] Fix dark and light mode;
 - [x] Adjust time formating;
 - [ ] Fix the time at the planned location;
-- [ ] Add lorem ipsum feature
+- [ ] Add lorem ipsum feature;
+- [ ] Mobile Responsive;
 
 ## 🤝 Contributors
 
