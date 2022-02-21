@@ -49,6 +49,7 @@ export function TextTransformProvider({ children }: IChildrenProps) {
     //Transform text to first capital letters
     //split the above string into an array of strings
     //whenever a blank space is encountered
+    
     str = str.toLocaleLowerCase();
     const arr = str.split(" ");
 
