@@ -48,7 +48,7 @@
     gap: 2.5rem;
 
 
-    .active > * {
+    .active[data-selected="true"] {
       background: var(--blue-color);
       color: var(--foreground-color);
     }

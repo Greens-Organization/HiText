@@ -1,5 +1,4 @@
 import { lazy, Suspense } from "react";
-import Menu from "../components/Menu";
 
 const Clock = lazy(() => import("../components/Clock"));
 
@@ -10,7 +9,6 @@ const renderLoader = () => <div className={styles.loader}></div>;
 export default function About() {
   return (
     <>
-      <Menu />
       <main className={styles.app}>
         <div className={styles.content}>
           <h1>About HiText</h1>
