@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { IChildrenProps, ITextTransformContextProps } from "../@types";
 
 export const TextTransformContext = createContext(
@@ -8,6 +8,13 @@ export const TextTransformContext = createContext(
 export function TextTransformProvider({ children }: IChildrenProps) {
   const [text, setText] = useState("");
   const [textCopy, setTextCopy] = useState("");
+
+  useEffect(() => {
+    saveOriginalText()
+  
+    console.log(text)
+  }, [text])
+  
 
   function saveOriginalText() {
     if (textCopy === "") {
@@ -42,6 +49,8 @@ export function TextTransformProvider({ children }: IChildrenProps) {
     //Transform text to first capital letters
     //split the above string into an array of strings
     //whenever a blank space is encountered
+    
+    str = str.toLocaleLowerCase();
     const arr = str.split(" ");
 
     //loop through each element of the array and capitalize the first letter.
@@ -57,7 +66,8 @@ export function TextTransformProvider({ children }: IChildrenProps) {
   function capitalize() {
     //Transform text to first capital letters
     saveOriginalText();
-    setText(toCapitalize(text));
+    let textTransform = toCapitalize(text)
+    setText(textTransform);
   }
 
   return (
